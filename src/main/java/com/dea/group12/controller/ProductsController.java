@@ -1,4 +1,4 @@
 package com.dea.group12.controller;
 
-public class ProductController {
+public class ProductsController {
 }
