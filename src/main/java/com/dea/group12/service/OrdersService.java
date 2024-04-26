@@ -1,18 +1,19 @@
 package com.dea.group12.service;
 
-import com.dea.group12.model.Order;
+import com.dea.group12.model.Orders;
 
 import java.util.List;
 
-public interface OrderService {
+public interface OrdersService {
     //user register
-    Order save(Order order);
+
+    Orders save(Orders orders);
 
     //view all users
-    List<Order> findAllOrders();
+    List<Orders> findAllOrders();
 
     //user update
-    Order updateOrder(Order order);
+    Orders updateOrder(Orders orders);
 
     //delete user
     void deleteOrder(int oid);
