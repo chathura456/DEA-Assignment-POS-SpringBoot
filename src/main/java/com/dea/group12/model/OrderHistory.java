@@ -13,8 +13,9 @@ public class OrderHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderHistoryId;
     private Date orderDate; // Date of the order history entry
+    private Integer orderId; // ID of the associated order
+    private String status; // Status of the order (e.g., "Pending", "Shipped", "Completed", etc.)
 
-    // Getter and setter methods for orderHistoryId
     public Integer getOrderHistoryId() {
         return orderHistoryId;
     }
@@ -29,6 +30,22 @@ public class OrderHistory {
 
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 
