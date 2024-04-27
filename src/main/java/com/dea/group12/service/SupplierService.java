@@ -8,16 +8,16 @@ import com.dea.group12.model.User;
 import java.util.List;
 
 public interface SupplierService {
-    //user register
+    //Add supplier
     Supplier save(Supplier supplier);
 
-    //view all users
+    //view all suppliers
     List<Supplier> findAllSuppliers();
 
-    //user update
+    //supplier update
     Supplier updateSupplier(Supplier supplier);
 
-    //delete user
+    //delete supplier
     void deleteSupplier(int id);
 
 

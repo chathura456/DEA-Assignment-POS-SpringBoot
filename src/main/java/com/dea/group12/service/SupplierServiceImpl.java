@@ -3,7 +3,6 @@
 package com.dea.group12.service;
 
 import com.dea.group12.model.Supplier;
-import com.dea.group12.model.User;
 import com.dea.group12.repository.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
