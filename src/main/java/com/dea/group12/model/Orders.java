@@ -17,13 +17,13 @@ public class Orders {
     private int uid;
     private String productName;
     private int qty;
+    private double price;
     private Date orderDate;
 
     // Getters and setters
     public int getOid() {
         return oid;
     }
-
     public void setOid(int oid) {
         this.oid = oid;
     }
@@ -31,7 +31,6 @@ public class Orders {
     public int getPid() {
         return pid;
     }
-
     public void setPid(int pid) {
         this.pid = pid;
     }
@@ -39,7 +38,6 @@ public class Orders {
     public int getUid() {
         return uid;
     }
-
     public void setUid(int uid) {
         this.uid = uid;
     }
@@ -47,7 +45,6 @@ public class Orders {
     public String getProductName() {
         return productName;
     }
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
@@ -55,15 +52,27 @@ public class Orders {
     public int getQty() {
         return qty;
     }
-
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    // Getter and setter for price
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    // Getter for total amount
+    public double getTamount() {
+        return qty * price;
     }
 
     public Date getOrderDate() {
         return orderDate;
     }
-
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
