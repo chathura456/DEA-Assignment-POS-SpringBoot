@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products") //Calling the API
+@CrossOrigin(origins = "http://localhost:5173") //enable cors for frontend
 public class ProductsController {
     @Autowired
     private ProductsService productsService;

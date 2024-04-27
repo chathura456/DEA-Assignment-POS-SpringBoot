@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/order-history")
+@CrossOrigin(origins = "http://localhost:5173") //enable cors for frontend
 public class OrderHistoryController {
     private final OrderHistoryService orderHistoryService;
     @Autowired

@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin(origins = "http://localhost:5173") //enable cors for frontend
 public class OrdersController {
 
     @Autowired
