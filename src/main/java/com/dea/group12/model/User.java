@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment id
     private int id;
 
     private String firstName;
@@ -16,6 +16,7 @@ public class User {
 
     private String password;
 
+    //getters and setters
     public int getId() {
         return id;
     }

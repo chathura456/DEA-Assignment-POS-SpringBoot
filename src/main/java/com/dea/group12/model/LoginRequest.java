@@ -1,5 +1,6 @@
 package com.dea.group12.model;
 
+//this use to handle login request send by the user
 public class LoginRequest {
     private String email;
     private String password;
