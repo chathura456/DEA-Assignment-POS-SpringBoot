@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin(origins = "http://localhost:5173")
 public class OrdersController {
 
     @Autowired
@@ -23,13 +24,13 @@ public class OrdersController {
         return ordersService.findAllOrders();
     }
 
-    @PutMapping("/orders/{oid}")
+    @PutMapping("/ordersedit/{oid}")
     public Orders updateOrders(@PathVariable int oid, @RequestBody Orders orders) {
         orders.setOid(oid);
         return ordersService.updateOrder(orders);
     }
 
-    @DeleteMapping("/orders/{oid}")
+    @DeleteMapping("/ordersDelete/{oid}")
     public void deleteOrders(@PathVariable int oid) {
         ordersService.deleteOrder(oid);
     }
