@@ -1,51 +1,60 @@
 package com.dea.group12.controller;
+
 import com.dea.group12.model.LoginRequest;
-import com.dea.group12.service.UserService;
 import com.dea.group12.model.User;
+import com.dea.group12.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
-public class MainController {
+@RequestMapping("/user")
+@CrossOrigin(origins = "http://localhost:5173")
+public class UserController {
+
     @Autowired
     private UserService userService;
-
-    @PostMapping("/register")
-    public User addStudent(@RequestBody User user) {
-        return userService.save(user);
-    }
 
     @GetMapping("/test")
     public String testConnection() {
         return "Connection OK!";
     }
 
-    @GetMapping("/all") // New endpoint to get all users
+    @PostMapping("/register")
+    public User registerUser(@RequestBody User user) {
+        return userService.save(user);
+    }
+
+    @GetMapping("/all")
     public List<User> getAllUsers() {
         return userService.findAllUsers();
     }
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/edit/{id}")
     public User updateUser(@PathVariable int id, @RequestBody User user) {
         user.setId(id);
         return userService.updateUser(user);
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable int id) {
         userService.deleteUser(id);
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest loginDTO) {
+    public Map<String, Object> login(@RequestBody LoginRequest loginDTO) {
         User user = userService.findByEmail(loginDTO.getEmail());
+        Map<String, Object> response = new HashMap<>();
+
         if (user != null && user.getPassword().equals(loginDTO.getPassword())) {
-            return "Login successful";
+            response.put("message", "Login successful");
+            response.put("user", user);
         } else {
-            return "Invalid credentials";
+            response.put("message", "Invalid credentials");
         }
+        return response;
     }
 }

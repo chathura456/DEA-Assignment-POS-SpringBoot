@@ -1,20 +1,20 @@
+//Supplier
+
 package com.dea.group12.model;
 
 import jakarta.persistence.*;
 
 @Entity
-public class User {
+@Table(name = "supplier")
+public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String firstName;
-
     private String lastName;
-
-    private String email;
-
-    private String password;
+    private String email; // Add email field
+    private String address; // Add address field
+    private String contact; // Add contact field
 
     public int getId() {
         return id;
@@ -48,11 +48,21 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAddress(String address) {
+        this.address = address;
     }
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+
+        this.contact = contact;
+    }
+
+
 }

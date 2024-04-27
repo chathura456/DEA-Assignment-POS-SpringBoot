@@ -3,9 +3,11 @@ package com.dea.group12.service;
 import com.dea.group12.model.Orders;
 import com.dea.group12.repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OrdersServiceImpl implements OrdersService{
 
     @Autowired
