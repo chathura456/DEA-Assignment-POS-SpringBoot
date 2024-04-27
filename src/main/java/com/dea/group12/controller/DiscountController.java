@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/discount")
+@CrossOrigin(origins = "http://localhost:5173") //enable cors for frontend
 public class DiscountController {
     @Autowired
     private DiscountService discountService;

@@ -1,22 +1,17 @@
 package com.dea.group12.model;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "discount")
 public class Discount {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int did;
-    @Column
     private String discountName;
-    @Column
-    private int discountAmount;
-    @Column
-    private int discountType;
+    private double discountAmount;
+    private String discountType;
 
     //Getter and setter
+
     public int getDid() {
         return did;
     }
@@ -29,23 +24,23 @@ public class Discount {
         return discountName;
     }
 
-    public void setdiscountName(String discountName) {
+    public void setDiscountName(String discountName) {
         this.discountName = discountName;
     }
 
-    public int getDiscountAmount() {
+    public double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(int discountAmount) {
+    public void setDiscountAmount(double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public int getDiscountType() {
+    public String getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(int discountType) {
+    public void setDiscountType(String discountType) {
         this.discountType = discountType;
     }
 }
