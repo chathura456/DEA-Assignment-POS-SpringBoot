@@ -20,5 +20,4 @@ public interface ProductsService {
     //Products Delete
     void deleteProducts(int pid);
 
-
 }
