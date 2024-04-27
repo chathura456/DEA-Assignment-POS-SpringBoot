@@ -22,15 +22,15 @@ public class ProductsController {
     public List<Products> getAllProducts() {
         return productsService.findAllProducts();
     }
-    @PutMapping("/products/{pid}")
-    public Products updateProducts(@PathVariable int pid, @RequestBody Products products) {
-        products.setId(pid);
+    @PutMapping("/products/{id}")
+    public Products updateProducts(@PathVariable int id, @RequestBody Products products) {
+        products.setId(id);
         return productsService.updateProducts(products);
     }
 
-    @DeleteMapping("/products/{pid}")
-    public void deleteProducts(@PathVariable int pid) {
-        productsService.deleteProducts(pid);
+    @DeleteMapping("/products/{id}")
+    public void deleteProducts(@PathVariable int id) {
+        productsService.deleteProducts(id);
     }
 
 }
