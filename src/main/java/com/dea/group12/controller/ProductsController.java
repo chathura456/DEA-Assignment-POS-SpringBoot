@@ -6,34 +6,31 @@ import com.dea.group12.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
-@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/products") //Calling the API
 public class ProductsController {
-
     @Autowired
     private ProductsService productsService;
 
-    @PostMapping("/save")
-    public Products save(@RequestBody Products products) {
+    @PostMapping("/AddProducts")
+    public Products addProducts(@RequestBody Products products){
         return productsService.save(products);
-}
-
-    @GetMapping("/getAllProducts")
+    }
+    @GetMapping("/allProducts")
     public List<Products> getAllProducts() {
-        return productsService.getAllProducts();
+        return productsService.findAllProducts();
+    }
+    @PutMapping("/products/{pid}")
+    public Products updateProducts(@PathVariable int pid, @RequestBody Products products) {
+        products.setId(pid);
+        return productsService.updateProducts(products);
     }
 
-    @PutMapping("/update")
-    public Products update(@RequestBody Products products) {
-        return productsService.update(products);
+    @DeleteMapping("/products/{pid}")
+    public void deleteProducts(@PathVariable int pid) {
+        productsService.deleteProducts(pid);
     }
 
-    @DeleteMapping("/delete")
-    public void delete(@RequestBody Products products) {
-        productsService.delete(products);
-    }
 }
