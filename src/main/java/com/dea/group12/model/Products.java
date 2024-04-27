@@ -13,16 +13,16 @@ import javax.annotation.processing.Generated;
 public class Products {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int pid;
+    private int id;
     private String pname;
     private double pamount;
     private int quantity;
     public int getId() {
-        return pid;
+        return id;
     }
 //Getters and Setters
-    public void setId(int pid) {
-        this.pid = pid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPname() {

@@ -18,6 +18,6 @@ public interface ProductsService {
     Products updateProducts(Products products);
 
     //Products Delete
-    void deleteProducts(int pid);
+    void deleteProducts(int id);
 
 }
