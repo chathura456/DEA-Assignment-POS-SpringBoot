@@ -9,20 +9,17 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "orders")
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int oid;
     private int pid;
     private int uid;
-    @Column(name = "product_name")
     private String productName;
     private int qty;
     private Date orderDate;
 
     // Getters and setters
-
     public int getOid() {
         return oid;
     }

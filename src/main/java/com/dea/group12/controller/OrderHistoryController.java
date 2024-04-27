@@ -22,21 +22,18 @@ public class OrderHistoryController {
     public List<OrderHistory> getAllOrderHistory() {
         return orderHistoryService.getAllOrderHistory();
     }
-    @GetMapping("/{id}")
-    public OrderHistory getOrderHistoryById(@PathVariable Long id) {
-        return orderHistoryService.getOrderHistoryById(id);
-    }
 
     @PostMapping("/add")
     public OrderHistory addHistory(@RequestBody OrderHistory orderHistory) {
         return orderHistoryService.save(orderHistory);
     }
     @PutMapping("/{id}")
-    public OrderHistory updateOrderHistory(@PathVariable Long id, @RequestBody OrderHistory orderHistory) {
+    public OrderHistory updateOrderHistory(@PathVariable int id, @RequestBody OrderHistory orderHistory) {
+        orderHistory.setOrderHistoryId(id);
         return orderHistoryService.updateOrderHistory(id, orderHistory);
     }
     @DeleteMapping("/{id}")
-    public void deleteOrderHistory(@PathVariable Long id) {
+    public void deleteOrderHistory(@PathVariable int id) {
         orderHistoryService.deleteOrderHistory(id);
     }
 

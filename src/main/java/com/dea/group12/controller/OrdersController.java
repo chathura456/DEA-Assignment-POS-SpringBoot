@@ -10,27 +10,27 @@ import java.util.List;
 @RequestMapping("/orders")
 public class OrdersController {
 
+    @Autowired
     private OrdersService ordersService;
-//
+
     @PostMapping("/addOrder")
     public Orders addOrders(@RequestBody Orders orders) {
         return ordersService.save(orders);
     }
 
-//
-//    @GetMapping("/allOrders") // New endpoint to get all users
-//    public List<Orders> getAllOrder() {
-//        return ordersService.findAllOrders();
-//    }
-//
-//    @PutMapping("/orders/{oid}")
-//    public Orders updateOrders(@PathVariable int oid, @RequestBody Orders orders) {
-//        orders.setOid(oid);
-//        return ordersService.updateOrder(orders);
-//    }
-//
-//    @DeleteMapping("/orders/{oid}")
-//    public void deleteOrders(@PathVariable int oid) {
-//        ordersService.deleteOrder(oid);
-//    }
+    @GetMapping("/allOrders")
+    public List<Orders> getAllOrder() {
+        return ordersService.findAllOrders();
+    }
+
+    @PutMapping("/orders/{oid}")
+    public Orders updateOrders(@PathVariable int oid, @RequestBody Orders orders) {
+        orders.setOid(oid);
+        return ordersService.updateOrder(orders);
+    }
+
+    @DeleteMapping("/orders/{oid}")
+    public void deleteOrders(@PathVariable int oid) {
+        ordersService.deleteOrder(oid);
+    }
 }

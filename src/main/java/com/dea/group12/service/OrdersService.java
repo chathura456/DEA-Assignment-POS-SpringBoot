@@ -1,9 +1,11 @@
 package com.dea.group12.service;
 
 import com.dea.group12.model.Orders;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface OrdersService {
     //user register
 
@@ -17,7 +19,4 @@ public interface OrdersService {
 
     //delete user
     void deleteOrder(int oid);
-
-  //user login
-//    User findByEmail(String email);
 }

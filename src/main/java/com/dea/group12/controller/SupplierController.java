@@ -21,12 +21,7 @@ public class SupplierController {
         return supplierService.save(supplier);
     }
 
-//    @GetMapping("/test")
-//    public String testConnection() {
-//        return "Connection OK!";
-//    }
-
-    @GetMapping("/allsupplier") // New endpoint to get all users
+    @GetMapping("/allsupplier")
     public List<Supplier> getAllSuppliers() {
         return supplierService.findAllSuppliers();
     }
