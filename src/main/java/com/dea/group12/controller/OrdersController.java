@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173") //enable cors for frontend
 public class OrdersController {
 
     @Autowired
@@ -24,13 +24,13 @@ public class OrdersController {
         return ordersService.findAllOrders();
     }
 
-    @PutMapping("/ordersedit/{oid}")
+    @PutMapping("/orders/{oid}")
     public Orders updateOrders(@PathVariable int oid, @RequestBody Orders orders) {
         orders.setOid(oid);
         return ordersService.updateOrder(orders);
     }
 
-    @DeleteMapping("/ordersDelete/{oid}")
+    @DeleteMapping("/orders/{oid}")
     public void deleteOrders(@PathVariable int oid) {
         ordersService.deleteOrder(oid);
     }

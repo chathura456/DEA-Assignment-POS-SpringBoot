@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 
 import javax.annotation.processing.Generated;
 
+
 @Entity
 public class Products {
     @Id
@@ -19,7 +20,7 @@ public class Products {
     public int getId() {
         return id;
     }
-
+//Getters and Setters
     public void setId(int id) {
         this.id = id;
     }

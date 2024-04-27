@@ -12,6 +12,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
+
+//handle cors issues
 @CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 
@@ -44,11 +46,14 @@ public class UserController {
         userService.deleteUser(id);
     }
 
+    //login method
     @PostMapping("/login")
     public Map<String, Object> login(@RequestBody LoginRequest loginDTO) {
+        //find user by email
         User user = userService.findByEmail(loginDTO.getEmail());
         Map<String, Object> response = new HashMap<>();
 
+        //check password is matched or not
         if (user != null && user.getPassword().equals(loginDTO.getPassword())) {
             response.put("message", "Login successful");
             response.put("user", user);
